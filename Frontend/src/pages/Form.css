@@ -1,0 +1,81 @@
+/* Form.css */
+
+.form-box {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 400px;
+}
+
+.form-box input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-box input:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #1a73e8;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  background-color: #155bb5;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.result a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.result a:hover {
+  text-decoration: underline;
+}
+
+/* Copy & Refresh buttons */
+.result button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.result button:hover {
+  opacity: 0.8;
+}
+
+.result button:nth-child(2) { /* Copy button */
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.result button:nth-child(3) { /* Refresh button */
+  background-color: #e0e0e0;
+  color: #333;
+}
