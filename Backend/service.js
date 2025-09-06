@@ -3,16 +3,17 @@ const { nanoid } = require('nanoid');
 const Link = async (req, res) => {
     const {longurl}= req.body;
    //  res.send("url created successfully");
-   const shorturl = nanoid(5);
+   const shorturl = nanoid(8);
    const newData =await UrlModel.create({longUrl:longurl, shortUrl:shorturl});
    res.json({
-       data: {
-         shortUrl: shorturl
-       }
-     });      
+    data: {
+      longUrl: longurl,
+      shortUrl: shorturl
+    }
+  });
+      
 }
 
-module.exports = Link;
 
 
 const Load = async (req, res) => {
@@ -25,5 +26,5 @@ const Load = async (req, res) => {
    }
 }
 
-module.exports = Load;
+module.exports = { Link, Load };
 
