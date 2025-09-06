@@ -4,9 +4,7 @@ const router = express.Router();
 // const { nanoid } = require('nanoid');
 const { Link, Load } = require("../service");
 
-router.get("/", (req, res) => {
-    res.send("🚀 URL Shortener API is running");
-});
+
 router.post("/api/create",Link); 
 router.get("/:url",Load); 
 
