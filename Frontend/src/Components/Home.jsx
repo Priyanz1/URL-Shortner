@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import Form from '../pages/Form';
+import Register from '../pages/Register';
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <h1>URL Shortener</h1>
       <Form></Form>
     </div>
+    // <Register/>
   );
 }
 

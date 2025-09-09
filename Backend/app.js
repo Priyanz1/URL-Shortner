@@ -9,7 +9,12 @@ const Routes = require("./routes/Routes");
 const UserRoutes = require("./routes/UserRoutes");
 const app = express();
 app.use(cookieParser());
-app.use(cors());
+// app.use(cors());
+
+app.use(cors({
+    origin: 'http://localhost:5174',   // frontend ka address
+    credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

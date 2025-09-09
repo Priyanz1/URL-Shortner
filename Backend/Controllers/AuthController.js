@@ -5,11 +5,11 @@ const jwt = require("jsonwebtoken");
 
 const Register=async(req,res)=>{
     const {name,email,password}= req.body;
-    const hash = await bcrypt.hash(password, 10);
+    const hash =await bcrypt.hash(password, 10);
     const User =await UserModel.create({
      name,
      email,
-     password:hash
+     password:hash,
     });
     res.json({ msg: "User registered successfully", User });
 }
@@ -29,7 +29,7 @@ const Login=async(req,res)=>{
     res.cookie("token", token, {
         httpOnly: true,   
         secure: false,    
-        sameSite: "strict"
+        sameSite: "lax"
       });
       res.json({msg:"Login successful"})
    

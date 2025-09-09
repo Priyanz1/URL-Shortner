@@ -43,8 +43,8 @@
 const express=require("express");
 const { Login, Register } = require("../Controllers/AuthController");
 const router=express.Router();
-router.post("/api/Register",Register)
-
-router.post("/api/Login",Login)
+// router.post("/api/Register",Register)
+router.post("/api/Register",Register);
+router.post("/api/Login",Login);
 
 module.exports = router;
