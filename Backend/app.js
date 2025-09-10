@@ -12,7 +12,7 @@ app.use(cookieParser());
 // app.use(cors());
 
 app.use(cors({
-    origin: 'http://localhost:5174',   // frontend ka address
+    origin: 'http://localhost:5175',   // frontend ka address
     credentials: true
 }));
 
