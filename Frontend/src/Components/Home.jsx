@@ -11,7 +11,8 @@ function Home() {
     //   <Form></Form>
     // </div>
     // <Register/>
-    <Login></Login>
+    // <Login></Login>
+    <div>hello welcome to the page</div>
   );
 }
 
