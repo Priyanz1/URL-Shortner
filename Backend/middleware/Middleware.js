@@ -1,3 +1,5 @@
+const jwt = require("jsonwebtoken"); 
+
 const AuthenticateToken=(req,res,next)=>{
     const token=req.cookies.token;
       
@@ -5,7 +7,7 @@ const AuthenticateToken=(req,res,next)=>{
         return res.json({ message: "No token provided" });
     }
 
-    JsonWebTokenError.verify(token,`${process.env.JWT_SECRET}`,(err,user)=>{
+    jwt.verify(token,`${process.env.JWT_SECRET}`,(err,user)=>{
   if(err){
     return res.json({msg:"invalid token"});
   }

@@ -17,7 +17,6 @@ function Form() {
     if (!longUrl) return;
 
     try {
-      // Correct payload key must match backend: "longurl"
       // const response = await axios.post('http://localhost:3000/api/create', {
       //   longurl: longUrl
       // });

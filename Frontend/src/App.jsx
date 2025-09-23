@@ -37,10 +37,15 @@ import {createBrowserRouter, RouterProvider} from "react-router";
 
 function App(){
   let router = createBrowserRouter([
-    {
-      path: "/api/create",
-      element:<Home/>,
-    },
+    // {
+    //   path: "/api/create",
+    //   // element:<Home/>,
+    //   element:<Form></Form>,
+    // },
+  {
+    path:"/",
+    element:<Home/>,
+  },
     {
       path: "/api/Register",
       element:<Register/>,
