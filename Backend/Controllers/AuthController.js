@@ -12,6 +12,7 @@ const Register=async(req,res)=>{
      password:hash,
     });
     res.json({ msg: "User registered successfully", User });
+    // res.redirect("/api/Login");
 }
 
 const Login=async(req,res)=>{
@@ -31,7 +32,8 @@ const Login=async(req,res)=>{
         secure: false,    
         sameSite: "lax"
       });
-      res.json({msg:"Login successful"})
+      res.json({msg:"Login successful"});
+    //   res.redirect("/api/create");
    
 }
 

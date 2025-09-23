@@ -30,10 +30,27 @@
 // export default App
 
 import Home from "./Components/Home"
+import Register from "./pages/Register"
+import Login from "./pages/Login"
 import Form from "./pages/Form"
+import {createBrowserRouter, RouterProvider} from "react-router";
+
 function App(){
-  return(
-<Home/>
-  )
+  let router = createBrowserRouter([
+    {
+      path: "/api/create",
+      element:<Home/>,
+    },
+    {
+      path: "/api/Register",
+      element:<Register/>,
+    },
+    {
+      path: "/api/Login",
+      element:<Login/>,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
  export default App;
+
