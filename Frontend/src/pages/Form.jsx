@@ -17,14 +17,12 @@ function Form() {
     if (!longUrl) return;
 
     try {
-      // const response = await axios.post('http://localhost:3000/api/create', {
-      //   longurl: longUrl
-      // });
+      
 
       const response = await axios.post(
         'http://localhost:3000/api/create',
-        { longurl: longUrl },          // key same as backend
-        { withCredentials: true }      // ✅ send JWT cookie
+        { longurl: longUrl },          
+        { withCredentials: true }     
       );
 
       setShortUrl(`http://localhost:3000/${response.data.data.shortUrl}`);
