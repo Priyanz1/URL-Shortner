@@ -12,7 +12,7 @@ app.use(cookieParser());
 // app.use(cors());
 
 app.use(cors({
-    origin: 'http://localhost:5173',   // frontend ka address
+    origin: 'http://localhost:5173',  
     credentials: true
 }));
 
@@ -21,7 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 
 const connectDB = require("./connection/config/db");
 connectDB();
-// const Routes = require("./routes/Routes");
 app.use("/",UserRoutes);
 app.use("/",Routes);
 // app.listen(3000,()=>{
