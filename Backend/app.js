@@ -9,7 +9,6 @@ const Routes = require("./routes/Routes");
 const UserRoutes = require("./routes/UserRoutes");
 const app = express();
 app.use(cookieParser());
-// app.use(cors());
 
 app.use(cors({
     origin: 'http://localhost:5173',  
