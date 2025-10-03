@@ -1,61 +1,21 @@
-// import React from 'react'
-// import {createBrowserRouter,RouterProvider} from "react-router-dom";
-// import Home from "./Components/Home";
-// import Register from "./pages/Register";
-// import Form from "./pages/Form";
-// import Login from "./pages/Login";
 
-// function App() {
-//   const router=createBrowserRouter([
-//     // {
-//     //   path:"/api/Register",
-//     //   element:<Register></Register>,
-//     // },
-//     // {
-//     //   path:"/api/Login",
-//     //   element:<Login/>,
-//     // },
-//     // {
-//     //   path:"/api/create",
-//     //   element:<Form/>,
-//     // },
-//     // {
-//     //   path:"/api/Home",
-//     //   element:<Home/>,
-//     // },
-//   ]);
-//   return <RouterProvider router={router}/>
-//     }
 
-// export default App
-
-import Home from "./Components/Home"
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Form from "./pages/Form"
-import {createBrowserRouter, RouterProvider} from "react-router";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+
 
 function App(){
-  let router = createBrowserRouter([
-    // {
-    //   path: "/api/create",
-    //   // element:<Home/>,
-    //   element:<Form></Form>,
-    // },
-  {
-    path:"/",
-    element:<Home/>,
-  },
-    {
-      path: "/api/Register",
-      element:<Register/>,
-    },
-    {
-      path: "/api/Login",
-      element:<Login/>,
-    },
-  ]);
-  return <RouterProvider router={router} />;
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/api/Login" element={<Login />} />
+      <Route path="/api/Register" element={<Register />} />
+      <Route path="/api/create" element={<Form/>} />
+    </Routes>
+  );
 }
  export default App;
 

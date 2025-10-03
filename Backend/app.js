@@ -11,7 +11,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'http://localhost:5173',  
+    origin: 'http://localhost:5174',  
     credentials: true
 }));
 
@@ -22,6 +22,6 @@ const connectDB = require("./connection/config/db");
 connectDB();
 app.use("/",UserRoutes);
 app.use("/",Routes);
-// app.listen(3000,()=>{
-// console.log("Server is running on http://localhost:3000")
-// })
+app.listen(3000,()=>{
+console.log("Server is running on http://localhost:3000")
+})
