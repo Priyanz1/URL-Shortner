@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
 
-const BACKEND_URL = 'https://url-shortner-backend-9222.onrender.com';
-
 function Form() {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -18,12 +16,12 @@ function Form() {
 
     try {
       const response = await axios.post(
-        `${BACKEND_URL}/api/create`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/create`,
         { longurl: longUrl },          
         { withCredentials: true }     
       );
 
-      setShortUrl(`${BACKEND_URL}/${response.data.data.shortUrl}`);
+      setShortUrl(`${import.meta.env.VITE_BACKEND_URL}/${response.data.data.shortUrl}`);
 
     } catch (err) {
       console.error(err);

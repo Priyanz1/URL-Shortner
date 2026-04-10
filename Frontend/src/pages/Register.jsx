@@ -6,8 +6,6 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 
-const BACKEND_URL = 'https://url-shortner-backend-9222.onrender.com';
-
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -24,7 +22,7 @@ const Register = () => {
 
         try {
             const response = await axios.post(
-                `${BACKEND_URL}/api/Register`,
+                `${import.meta.env.VITE_BACKEND_URL}/api/Register`,
                 { name, email, password },
                 { withCredentials: true }
             );
