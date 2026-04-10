@@ -9,7 +9,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin: true,  // Allow all origins for deployed app
+    origin: 'https://url-shortner-frontend-nine-zeta.vercel.app',
     credentials: true
 }));
 
