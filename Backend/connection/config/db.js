@@ -1,8 +1,15 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
+  const mongoUrl = process.env.MONGO_URL;
+  if (!mongoUrl) {
+    console.error("❌ MONGO_URL environment variable is not set.");
+    console.error("Set MONGO_URL in your deployment environment or local .env file.");
+    process.exit(1);
+  }
+
   try {
-    await mongoose.connect(`${process.env.MONGO_URL}/urlshortener`);
+    await mongoose.connect(`${mongoUrl}/urlshortener`);
     console.log("✅ MongoDB connected successfully");
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);

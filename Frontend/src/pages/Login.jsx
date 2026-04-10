@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { UserDataContext } from '../context/UserContext';
 
+const BACKEND_URL = 'https://url-shortner-backend-9222.onrender.com';
+
 function Login() {
   const [email, setEmail] = useState('');           
   const [password, setPassword] = useState('');    
@@ -24,7 +26,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/Login',
+        `${BACKEND_URL}/api/Login`,
         { email, password },
         { withCredentials: true }
       );
