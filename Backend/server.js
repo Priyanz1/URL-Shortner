@@ -1,8 +1,12 @@
-// import http from "http";
-// import app from "./app.js";  
+const app = require('./app');
+const db = require('./connection/config/db');
 
-// const server = http.createServer(app);
+const server = async () => {
+  await db();
+  const port = process.env.PORT || 5000;
+  app.listen(port, () => {
+    console.log(`server is running on port ${port}`);
+  });
+};
 
-// server.listen(3000, () => {
-//   console.log("✅ Server is running on http://localhost:3000");
-// });
+module.exports = server;

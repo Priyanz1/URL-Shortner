@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Form from "./pages/Form"
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import UserWrapper from "./Wrapper/UserWrapper";
 
 
 function App(){
@@ -13,7 +14,11 @@ function App(){
       <Route path="/" element={<Home />} />
       <Route path="/api/Login" element={<Login />} />
       <Route path="/api/Register" element={<Register />} />
-      <Route path="/api/create" element={<Form/>} />
+      <Route path="/api/create" element={
+        <UserWrapper>
+          <Form/>
+        </UserWrapper>
+        } />
     </Routes>
   );
 }

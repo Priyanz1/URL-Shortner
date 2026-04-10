@@ -2,15 +2,17 @@
 
 
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import { UserDataContext } from '../context/UserContext';
 
 function Login() {
   const [email, setEmail] = useState('');           
   const [password, setPassword] = useState('');    
   const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
+  const {user,setuser}=useContext(UserDataContext);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -22,14 +24,15 @@ function Login() {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/Login',
+        'http://localhost:5000/api/Login',
         { email, password },
         { withCredentials: true }
       );
 
+      setuser(response.data.token);
+      localStorage.setItem('token',response.data.token);
       setMessage(response.data.msg);
       setError(false);
-
       
       navigate("/api/create");
     } catch (err) {
@@ -48,12 +51,13 @@ function Login() {
 
   return (
     <div className="container">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="on">
         <input
           type="email"
           placeholder="Type Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          autoComplete="email"
           required
         />
         <input
@@ -61,6 +65,7 @@ function Login() {
           placeholder="Type Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          autoComplete="current-password"
           required
         />
         <button type="submit" disabled={loading}>

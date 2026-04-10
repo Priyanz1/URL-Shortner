@@ -16,12 +16,12 @@ function Form() {
 
     try {
       const response = await axios.post(
-        'http://localhost:3000/api/create',
+        'http://localhost:5000/api/create',
         { longurl: longUrl },          
         { withCredentials: true }     
       );
 
-      setShortUrl(`http://localhost:3000/${response.data.data.shortUrl}`);
+      setShortUrl(`http://localhost:5000/${response.data.data.shortUrl}`);
 
     } catch (err) {
       console.error(err);

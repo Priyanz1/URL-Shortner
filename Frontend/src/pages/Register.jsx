@@ -1,7 +1,7 @@
 
 
 // src/Register.js
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
@@ -22,7 +22,7 @@ const Register = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:3000/api/Register',
+                'http://localhost:5000/api/Register',
                 { name, email, password },
                 { withCredentials: true }
             );
@@ -52,6 +52,7 @@ const Register = () => {
                     className="input"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    autoComplete="name"
                     required
                 />
                 <input
@@ -60,6 +61,7 @@ const Register = () => {
                     className="input"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="email"
                     required
                 />
                 <input
@@ -68,6 +70,7 @@ const Register = () => {
                     className="input"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="new-password"
                     required
                 />
                 <button type="submit" className="button">Register</button>
