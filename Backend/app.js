@@ -10,7 +10,7 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'https://url-shortner-frontend-nine-zeta.vercel.app',
+    origin: 'https://url-shortner-frontend-14tmbepfl-priyanz1s-projects.vercel.app',
     credentials: true
 }));
 
