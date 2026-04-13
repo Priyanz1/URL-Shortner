@@ -21,7 +21,7 @@ function Form() {
         { withCredentials: true }     
       );
 
-      setShortUrl(`${import.meta.env.VITE_BACKEND_URL/api}/${response.data.data.shortUrl}`);
+      setShortUrl(`${import.meta.env.VITE_BACKEND_URL}/${response.data.data.shortUrl}`);
 
     } catch (err) {
       console.error(err);
