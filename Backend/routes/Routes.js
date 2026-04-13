@@ -8,10 +8,10 @@ const createValidation = [
     body('longurl').isURL().withMessage('Invalid URL')
 ];
 
-router.post("/api/create", middleware, createValidation, Link);
-router.get("/api/create", middleware, (req, res) => {
-    res.json({ msg: "token valid", user: req.user });
-});
+router.post("/create", middleware, createValidation, Link);
+// router.get("/create", middleware, (req, res) => {
+//     res.json({ msg: "token valid", user: req.user });
+// });
 router.get("/:url", Load);
 
 module.exports = router; 
