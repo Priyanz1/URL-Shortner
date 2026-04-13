@@ -15,10 +15,16 @@ function Form() {
     if (!longUrl) return;
 
     try {
+      const token = localStorage.getItem("token");
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/api/create`,
-        { longurl: longUrl },          
-        { withCredentials: true }     
+        { longurl: longUrl },    
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        },      
+        // { withCredentials: true }     
       );
 
       setShortUrl(`${import.meta.env.VITE_BACKEND_URL}/${response.data.data.shortUrl}`);

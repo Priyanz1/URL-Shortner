@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 app.use(cors({
     origin: 'https://url-shortner-frontend-nine-zeta.vercel.app',
-    credentials: true
+    // credentials: true
 }));
 
 app.use(express.json());
