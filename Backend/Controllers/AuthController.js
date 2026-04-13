@@ -44,8 +44,8 @@ const Login = async (req, res) => {
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
         res.cookie("token", token, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax"
+            secure: true,     
+            sameSite: "None"
         });
         res.json({ msg: "Login successful", token });
     } catch (error) {
