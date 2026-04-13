@@ -1,5 +1,3 @@
-
-
 import Register from "./pages/Register"
 import Login from "./pages/Login"
 import Form from "./pages/Form"
@@ -12,9 +10,9 @@ function App(){
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/api/Login" element={<Login />} />
-      <Route path="/api/Register" element={<Register />} />
-      <Route path="/api/create" element={
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/create" element={
         <UserWrapper>
           <Form/>
         </UserWrapper>

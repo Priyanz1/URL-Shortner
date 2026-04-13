@@ -34,7 +34,7 @@ function Login() {
       setMessage(response.data.msg);
       setError(false);
       
-      navigate("/api/create");
+      navigate("/create");
     } catch (err) {
       setError(true);
       if (err.response && err.response.data) {
@@ -72,7 +72,7 @@ function Login() {
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        <Link to="/api/Register">Create an account</Link>
+        <Link to="/register">Create an account</Link>
 
         {message && (
           <div className={`message ${error ? 'error' : 'success'}`}>

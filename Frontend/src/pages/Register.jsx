@@ -31,7 +31,7 @@ const Register = () => {
             setError(false);
 
             
-            navigate("/api/Login");
+            navigate("/login");
         } catch (err) {
             setError(true);
             if (err.response && err.response.data) {
@@ -75,7 +75,7 @@ const Register = () => {
                 />
                 <button type="submit" className="button">Register</button>
                 
-                <Link to="/api/Login">Login to your account</Link>
+                <Link to="/login">Login to your account</Link>
 
                 {message && (
                     <div className={`message ${error ? 'error' : 'success'}`}>

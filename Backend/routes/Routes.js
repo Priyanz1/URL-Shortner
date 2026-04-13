@@ -9,9 +9,9 @@ const createValidation = [
 ];
 
 router.post("/create", middleware, createValidation, Link);
-// router.get("/create", middleware, (req, res) => {
-//     res.json({ msg: "token valid", user: req.user });
-// });
+router.get("/create", middleware, (req, res) => {
+    res.json({ msg: "token valid", user: req.user });
+});
 router.get("/:url",Load);
 
 module.exports = router; 

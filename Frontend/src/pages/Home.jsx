@@ -12,13 +12,13 @@ export default function Home() {
 
         <div className="flex gap-4 justify-center">
           <Link
-            to="/api/Login"
+            to="/login"
             className="px-6 py-2 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700"
           >
             Login
           </Link>
           <Link
-            to="/api/Register"
+            to="/register"
             className="px-6 py-2 rounded-xl bg-green-600 text-white font-semibold hover:bg-green-700"
           >
             Register

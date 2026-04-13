@@ -10,7 +10,7 @@ function UserWrapper({children}) {
     const navigate=useNavigate();
    useEffect(()=>{
     if(!token){
-      navigate("/api/Login");
+      navigate("/login");
       // return;
   }
 
@@ -26,7 +26,7 @@ function UserWrapper({children}) {
     }).catch((err) => {
       console.error(err);
       localStorage.removeItem('token');
-      navigate('/api/Login');
+      navigate('/login');
     });
    }, [token]);
 
